@@ -65,5 +65,7 @@ static const char unknown_str[] = "n/a";
  */
 static const struct arg args[] = {
 	/* function format          argument */
-	{ datetime, "%s",           "%F %T" },
+	//{ datetime, "%s ",           "%F %T" },
+        { run_command, " %s ", "pactl list sinks|awk '$1==\"Volume:\" {print $5}'" },
+	{ run_command, "%s ", "LC_ALL=ja_JP.utf8 date +\"%Y年 %B %d日 %A %H:%M\"" },
 };
